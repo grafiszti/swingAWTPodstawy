@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
-public class MyPanel extends JPanel {
+import pl.grafiszti.swingpodstawy.templates.AbstractPanel;
+
+public class Zad41Panel extends AbstractPanel {
 	private static final long serialVersionUID = 5707061818014557530L;
 
 	private BufferedImage imageFromFile, imageFromURL;
-	private Dimension panelDimension;
 
-	public MyPanel() {
+	public Zad41Panel() {
 		super();
 
 		String imagePath = "../podstawySwingAWT/assets/images/cojapacze.jpg";
@@ -26,15 +26,9 @@ public class MyPanel extends JPanel {
 		init(imagePath, imageURL);
 	}
 
-	public MyPanel(String imagePath, String imageURL) {
+	public Zad41Panel(String imagePath, String imageURL) {
 		super();
 		init(imagePath, imageURL);
-	}
-
-	@Override
-	public void paintComponent(Graphics g) {
-		Graphics2D g2d = (Graphics2D) g;
-		draw(g2d);
 	}
 
 	private void init(String imagePath, String imageURL) {
@@ -58,9 +52,14 @@ public class MyPanel extends JPanel {
 		this.setPreferredSize(panelDimension);
 	}
 
+	@Override
+	public void paintComponent(Graphics g) {
+		Graphics2D g2d = (Graphics2D) g;
+		draw(g2d);
+	}
+
 	private void draw(Graphics2D g2d) {
 		g2d.drawImage(imageFromFile, 0, 0, this);
-		g2d.drawImage(imageFromURL, imageFromFile.getWidth(),
-				imageFromFile.getHeight(), this);
+		g2d.drawImage(imageFromURL, imageFromFile.getWidth(), 0, this);
 	}
 }
