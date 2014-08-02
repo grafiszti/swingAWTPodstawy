@@ -11,7 +11,11 @@ public class Zad41Frame extends JFrame {
 	private JPanel mainPanel;
 
 	public Zad41Frame() {
-		init("", new Point(200, 200));
+		init("Zad 4.1", new Point(200, 200));
+	}
+	
+	public Zad41Frame(Point location) {
+		init("Zad 4.1", location);
 	}
 
 	public Zad41Frame(String frameTitle) {

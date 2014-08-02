@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import pl.grafiszti.swingpodstawy.answers.zad41.Zad41Frame;
+import pl.grafiszti.swingpodstawy.answers.zad42.Zad42Frame;
 
 public class MainMenu extends JFrame {
 	private static final long serialVersionUID = 7914062961526206490L;
@@ -31,7 +32,7 @@ public class MainMenu extends JFrame {
 		mainButtonsPanel.setLayout(new FlowLayout());
 
 		this.addButtons();
-		
+
 		this.add(mainButtonsPanel);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,10 +40,9 @@ public class MainMenu extends JFrame {
 	}
 
 	private void addButtons() {
-		mainButtonsPanel.add(new MenuButton("Zad 4.1", build41Frame(), 20, 20));
-	}
-
-	private JFrame build41Frame() {
-		return new Zad41Frame("Zad 4.1", new Point(300, 300));
+		mainButtonsPanel.add(new MenuButton("Zad 4.1", new Zad41Frame(
+				new Point(300, 300)), 20, 20));
+		mainButtonsPanel
+				.add(new MenuButton("Zad 4.2", new Zad42Frame(), 30, 30));
 	}
 }
