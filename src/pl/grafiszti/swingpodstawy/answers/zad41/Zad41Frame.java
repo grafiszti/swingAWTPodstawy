@@ -1,30 +1,34 @@
 package pl.grafiszti.swingpodstawy.answers.zad41;
 
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Point;
-import java.util.List;
 
-import pl.grafiszti.swingpodstawy.templates.AbstractFrame;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class Zad41Frame extends AbstractFrame {
+public class Zad41Frame extends JFrame {
 	private static final long serialVersionUID = 1843585275605520548L;
 
+	private JPanel mainPanel;
+
 	public Zad41Frame() {
-		super();
+		init("", new Point(200, 200));
 	}
 
-	public Zad41Frame(String frameTitle, List<Component> componentList) {
-		super(frameTitle, componentList);
+	public Zad41Frame(String frameTitle) {
+		init(frameTitle, new Point(200, 200));
 	}
 
-	public Zad41Frame(String frameTitle, List<Component> componentList,
-			Point location) {
-		super(frameTitle, componentList, location);
+	public Zad41Frame(String frameTitle, Point location) {
+		init(frameTitle, location);
 	}
 
-	public Zad41Frame(String frameTitle, List<Component> componentList,
-			Point location, Dimension dimension) {
-		super(frameTitle, componentList, location, dimension);
+	private void init(String frameTitle, Point location) {
+		this.setLocation(location);
+
+		mainPanel = new Zad41Panel();
+		
+		this.add(mainPanel);
+
+		this.pack();
 	}
 }

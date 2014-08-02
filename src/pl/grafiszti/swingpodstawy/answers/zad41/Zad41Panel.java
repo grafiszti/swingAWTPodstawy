@@ -9,10 +9,9 @@ import java.io.IOException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
-import pl.grafiszti.swingpodstawy.templates.AbstractPanel;
-
-public class Zad41Panel extends AbstractPanel {
+public class Zad41Panel extends JPanel {
 	private static final long serialVersionUID = 5707061818014557530L;
 
 	private BufferedImage imageFromFile, imageFromURL;
@@ -20,7 +19,6 @@ public class Zad41Panel extends AbstractPanel {
 
 	public Zad41Panel() {
 		super();
-
 		String imagePath = "../podstawySwingAWT/assets/images/cojapacze.jpg";
 		String imageURL = "https://lh4.googleusercontent.com/-BkiBzEj5L0c/AAAAAAAAAAI/AAAAAAAAAH0/7X1U2-Ae-gU/photo.jpg";
 
@@ -45,12 +43,10 @@ public class Zad41Panel extends AbstractPanel {
 		} catch (IOException e) {
 			System.out.println("Blad wczytywania obrazu z podanego URL");
 		}
-
-		this.panelDimension = new Dimension(imageFromFile.getWidth() / scale
+		this.setPreferredSize(new Dimension(imageFromFile.getWidth() / scale
 				+ imageFromURL.getWidth() / scale, imageFromFile.getHeight()
-				/ scale + imageFromURL.getHeight() / scale);
+				/ scale + imageFromURL.getHeight() / scale));
 
-		this.setPreferredSize(panelDimension);
 	}
 
 	@Override
