@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 import pl.grafiszti.swingpodstawy.answers.zad41.Zad41Frame;
 import pl.grafiszti.swingpodstawy.answers.zad42.Zad42Frame;
+import pl.grafiszti.swingpodstawy.answers.zad43.Zad43Frame;
 
 public class MainMenu extends JFrame {
 	private static final long serialVersionUID = 7914062961526206490L;
@@ -44,5 +45,7 @@ public class MainMenu extends JFrame {
 				new Point(300, 300)), 20, 20));
 		mainButtonsPanel
 				.add(new MenuButton("Zad 4.2", new Zad42Frame(), 30, 30));
+		mainButtonsPanel
+				.add(new MenuButton("Zad 4.3", new Zad43Frame(), 40, 40));
 	}
 }

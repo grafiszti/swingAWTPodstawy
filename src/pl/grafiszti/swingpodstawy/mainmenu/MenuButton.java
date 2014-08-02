@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 public class MenuButton extends JButton implements ActionListener {
 
@@ -32,6 +33,10 @@ public class MenuButton extends JButton implements ActionListener {
 		if (frame.isVisible()) {
 			frame.repaint();
 		} else {
+			SwingUtilities.updateComponentTreeUI(frame);
+			frame.invalidate();
+			frame.validate();
+			frame.repaint();
 			frame.setVisible(true);
 		}
 	}
