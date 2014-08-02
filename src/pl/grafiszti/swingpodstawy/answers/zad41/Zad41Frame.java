@@ -1,9 +1,9 @@
-package pl.grafiszti.swingpodstawy.zad41;
+package pl.grafiszti.swingpodstawy.answers.zad41;
 
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Point;
-import java.util.ArrayList;
+import java.util.List;
 
 import pl.grafiszti.swingpodstawy.templates.AbstractFrame;
 
@@ -14,16 +14,16 @@ public class Zad41Frame extends AbstractFrame {
 		super();
 	}
 
-	public Zad41Frame(String frameTitle, ArrayList<Component> componentList) {
+	public Zad41Frame(String frameTitle, List<Component> componentList) {
 		super(frameTitle, componentList);
 	}
 
-	public Zad41Frame(String frameTitle, ArrayList<Component> componentList,
+	public Zad41Frame(String frameTitle, List<Component> componentList,
 			Point location) {
 		super(frameTitle, componentList, location);
 	}
 
-	public Zad41Frame(String frameTitle, ArrayList<Component> componentList,
+	public Zad41Frame(String frameTitle, List<Component> componentList,
 			Point location, Dimension dimension) {
 		super(frameTitle, componentList, location, dimension);
 	}

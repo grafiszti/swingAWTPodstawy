@@ -1,4 +1,4 @@
-package pl.grafiszti.swingpodstawy.zad41;
+package pl.grafiszti.swingpodstawy.answers.zad41;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
