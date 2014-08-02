@@ -17,15 +17,12 @@ public class MainMenu extends JFrame {
 	private static final long serialVersionUID = 7914062961526206490L;
 
 	private JPanel mainButtonsPanel;
-	private List<MenuButton> buttonsList;
 
 	public MainMenu() {
 		init();
 	}
 
 	private void init() {
-		this.buttonsList = new ArrayList<MenuButton>();
-
 		this.setLocation(200, 300);
 		this.setPreferredSize(new Dimension(300, 600));
 

@@ -6,7 +6,9 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-public class Zad43Frame extends JFrame implements KeyListener {
+import pl.grafiszti.swingpodstawy.utils.CloneableFrame;
+
+public class Zad43Frame extends CloneableFrame implements KeyListener {
 
 	private int counter = 0;
 	private String userInput = "";

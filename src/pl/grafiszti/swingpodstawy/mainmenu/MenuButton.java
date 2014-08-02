@@ -5,24 +5,26 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+
+import pl.grafiszti.swingpodstawy.utils.CloneableFrame;
 
 public class MenuButton extends JButton implements ActionListener {
 
-	protected JFrame frame;
+	protected CloneableFrame newStateFrame;
+	private JFrame frame;
 
-	public MenuButton(String text, JFrame frame, int x, int y) {
+	public MenuButton(String text, CloneableFrame frame, int x, int y) {
 		super(text);
-		this.frame = frame;
+		this.newStateFrame = frame;
 		this.setSize(100, 200);
 		this.setLocation(x, y);
 		this.addActionListener(this);
 	}
 
-	public MenuButton(String text, JFrame frame, int x, int y, int width,
-			int height) {
+	public MenuButton(String text, CloneableFrame frame, int x, int y,
+			int width, int height) {
 		super(text);
-		this.frame = frame;
+		this.newStateFrame = frame;
 		this.setSize(width, height);
 		this.setLocation(x, y);
 		this.addActionListener(this);
@@ -30,14 +32,12 @@ public class MenuButton extends JButton implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (frame.isVisible()) {
+		try {
+			frame = (JFrame)newStateFrame.clone();
 			frame.repaint();
-		} else {
-			SwingUtilities.updateComponentTreeUI(frame);
-			frame.invalidate();
-			frame.validate();
-			frame.repaint();
-			frame.setVisible(true);
+		} catch (CloneNotSupportedException exception) {
+			exception.printStackTrace();
 		}
+		frame.setVisible(true);
 	}
 }
