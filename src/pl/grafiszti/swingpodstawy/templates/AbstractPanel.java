@@ -9,5 +9,11 @@ public abstract class AbstractPanel extends JPanel {
 
 	public AbstractPanel() {
 		super();
+		panelDimension = new Dimension(640, 480);
+	}
+	
+	public AbstractPanel(Dimension dimension){
+		super();
+		this.panelDimension = dimension;
 	}
 }

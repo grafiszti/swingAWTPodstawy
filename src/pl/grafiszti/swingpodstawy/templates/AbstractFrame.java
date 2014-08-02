@@ -48,7 +48,7 @@ public abstract class AbstractFrame extends JFrame {
 		for (Component comp : componentList) {
 			this.add(comp);
 		}
-
+ 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);

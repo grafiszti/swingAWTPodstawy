@@ -16,6 +16,7 @@ public class Zad41Panel extends AbstractPanel {
 	private static final long serialVersionUID = 5707061818014557530L;
 
 	private BufferedImage imageFromFile, imageFromURL;
+	private int scale = 2;
 
 	public Zad41Panel() {
 		super();
@@ -45,9 +46,9 @@ public class Zad41Panel extends AbstractPanel {
 			System.out.println("Blad wczytywania obrazu z podanego URL");
 		}
 
-		panelDimension = new Dimension(imageFromFile.getWidth()
-				+ imageFromURL.getWidth(), imageFromFile.getHeight()
-				+ imageFromURL.getHeight());
+		this.panelDimension = new Dimension(imageFromFile.getWidth() / scale
+				+ imageFromURL.getWidth() / scale, imageFromFile.getHeight()
+				/ scale + imageFromURL.getHeight() / scale);
 
 		this.setPreferredSize(panelDimension);
 	}
@@ -59,7 +60,10 @@ public class Zad41Panel extends AbstractPanel {
 	}
 
 	private void draw(Graphics2D g2d) {
-		g2d.drawImage(imageFromFile, 0, 0, this);
-		g2d.drawImage(imageFromURL, imageFromFile.getWidth(), 0, this);
+		g2d.drawImage(imageFromFile, 0, 0, imageFromFile.getWidth() / scale,
+				imageFromFile.getHeight() / scale, this);
+		g2d.drawImage(imageFromURL, imageFromFile.getWidth() / scale, 0,
+				imageFromURL.getWidth() / scale, imageFromURL.getHeight()
+						/ scale, this);
 	}
 }
