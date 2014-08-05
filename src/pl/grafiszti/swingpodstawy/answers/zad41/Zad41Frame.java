@@ -5,9 +5,7 @@ import java.awt.Point;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import pl.grafiszti.swingpodstawy.utils.CloneableFrame;
-
-public class Zad41Frame extends CloneableFrame {
+public class Zad41Frame extends JFrame {
 	private static final long serialVersionUID = 1843585275605520548L;
 
 	private JPanel mainPanel;

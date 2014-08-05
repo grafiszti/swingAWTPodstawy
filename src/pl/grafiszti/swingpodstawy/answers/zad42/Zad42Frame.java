@@ -13,9 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import pl.grafiszti.swingpodstawy.utils.CloneableFrame;
-
-public class Zad42Frame extends CloneableFrame {
+public class Zad42Frame extends JFrame {
 	public static final int BUTTON_WIDTH = 400;
 	public static final int BUTTON_HEIGHT = 300;
 
